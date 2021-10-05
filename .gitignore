@@ -1,0 +1,6 @@
+# Output Files
+MailClient/bin/
+MailClient/obj/
+
+# vs2019 folder
+.vs/

@@ -2,6 +2,7 @@
 MailClient/bin/
 MailClient/obj/
 MailClient/publish/
+MailClientInstaller/
 
 # vs2019 folder
 .vs/

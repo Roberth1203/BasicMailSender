@@ -1,17 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
+using System.Configuration;
+using System.Net;
+using System.Net.Mail;
+using System.Net.Security;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Configuration;
-using System.Net.Mail;
-using System.Net;
-using System.Security.Cryptography.X509Certificates;
-using System.Net.Security;
 
 namespace MailClient
 {
@@ -94,23 +88,15 @@ namespace MailClient
                 server.Send(message);
                 response = "OK-Mensaje Enviado";
             }
-            catch (System.Net.Mail.SmtpException x) { response = String.Format("sendCustomMail > SmtpException [{0}] \n\n ExceptionDescription -> {1}", x.Message, x.StackTrace); }
-            catch (Exception ex) { response = String.Format("sendCustomMail > SystemException [{0}] \n\n ExceptionDescription -> {1}", ex.Message, ex.StackTrace); }
+            catch (System.Net.Mail.SmtpException x) { response = String.Format("SmtpException [{0}] \n\n ExceptionDescription -> {1}", x.Message, x.StackTrace); }
+            catch (Exception ex) { response = String.Format("SystemException [{0}] \n\n ExceptionDescription -> {1}", ex.Message, ex.StackTrace); }
             return response;
         }
 
-        private void ClearInputs()
-        {
-            try
-            {
-                txTo.Text = string.Empty;
-                txSubject.Text = string.Empty;
-                txBody.Text = string.Empty;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+        private void ClearInputs() {
+            txTo.Text = string.Empty;
+            txSubject.Text = string.Empty;
+            txBody.Text = string.Empty;
         }
     }
 }

@@ -1,6 +1,11 @@
 # Output Files
 MailClient/bin/
 MailClient/obj/
+MailClient/publish/
 
 # vs2019 folder
 .vs/
+
+# Temp Files
+MailClient/bin/MailClient.csproj.user
+MailClient/bin/MailClient_TemporaryKey
